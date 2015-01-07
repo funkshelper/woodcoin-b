@@ -1,0 +1,20 @@
+
+
+
+
+
+
+
+
+
+     7FFFFFFF800000007FFFFFFFFFFFFFFFDE737D56D38B9F4276D9E5617D316265
+2|~~|FFFFFFFF00000000FFFFFFFFFFFFFFFFBCE6FAADA7179E84F3B9CAC2FC632551 
+     E
+     1F                             1B    
+     1E                             1A  
+      1F   1F
+           1E
+            10
+            10       F
+                     E
+                     1F  

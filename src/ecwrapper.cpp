@@ -92,7 +92,7 @@ err:
 } // anon namespace
 
 CECKey::CECKey() {
-    pkey = EC_KEY_new_by_curve_name(NID_secp256k1);
+    pkey = EC_KEY_new_by_curve_name(NID_X9_62_prime256v1);
     assert(pkey != NULL);
 }
 
@@ -144,6 +144,7 @@ bool CECKey::TweakPublic(const unsigned char vchTweak[32]) {
     BIGNUM *bnOne = BN_CTX_get(ctx);
     const EC_GROUP *group = EC_KEY_get0_group(pkey);
     EC_GROUP_get_order(group, bnOrder, ctx); // what a grossly inefficient way to get the (constant) group order...
+     
     BN_bin2bn(vchTweak, 32, bnTweak);
     if (BN_cmp(bnTweak, bnOrder) >= 0)
         ret = false; // extremely unlikely
@@ -161,7 +162,7 @@ bool CECKey::TweakPublic(const unsigned char vchTweak[32]) {
 
 bool CECKey::SanityCheck()
 {
-    EC_KEY *pkey = EC_KEY_new_by_curve_name(NID_secp256k1);
+    EC_KEY *pkey = EC_KEY_new_by_curve_name(NID_X9_62_prime256v1);
     if(pkey == NULL)
         return false;
     EC_KEY_free(pkey);

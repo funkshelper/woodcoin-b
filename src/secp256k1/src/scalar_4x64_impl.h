@@ -10,10 +10,10 @@
 typedef unsigned __int128 uint128_t;
 
 /* Limbs of the secp256k1 order. */
-#define SECP256K1_N_0 ((uint64_t)0xBFD25E8CD0364141ULL)
-#define SECP256K1_N_1 ((uint64_t)0xBAAEDCE6AF48A03BULL)
-#define SECP256K1_N_2 ((uint64_t)0xFFFFFFFFFFFFFFFEULL)
-#define SECP256K1_N_3 ((uint64_t)0xFFFFFFFFFFFFFFFFULL)
+#define SECP256K1_N_0 ((uint64_t)0xF3B9CAC2FC632551ULL)
+#define SECP256K1_N_1 ((uint64_t)0xBCE6FAADA7179E84ULL)
+#define SECP256K1_N_2 ((uint64_t)0xFFFFFFFFFFFFFFFFULL)
+#define SECP256K1_N_3 ((uint64_t)0xFFFFFFFF00000000ULL)
 
 /* Limbs of 2^256 minus the secp256k1 order. */
 #define SECP256K1_N_C_0 (~SECP256K1_N_0 + 1)
@@ -21,10 +21,10 @@ typedef unsigned __int128 uint128_t;
 #define SECP256K1_N_C_2 (1)
 
 /* Limbs of half the secp256k1 order. */
-#define SECP256K1_N_H_0 ((uint64_t)0xDFE92F46681B20A0ULL)
-#define SECP256K1_N_H_1 ((uint64_t)0x5D576E7357A4501DULL)
-#define SECP256K1_N_H_2 ((uint64_t)0xFFFFFFFFFFFFFFFFULL)
-#define SECP256K1_N_H_3 ((uint64_t)0x7FFFFFFFFFFFFFFFULL)
+#define SECP256K1_N_H_0 ((uint64_t)0x76D9E5617D316265ULL)
+#define SECP256K1_N_H_1 ((uint64_t)0xDE737D56D38B9F42ULL)
+#define SECP256K1_N_H_2 ((uint64_t)0x7FFFFFFFFFFFFFFFULL)
+#define SECP256K1_N_H_3 ((uint64_t)0x7FFFFFFF80000000ULL)
 
 SECP256K1_INLINE static void secp256k1_scalar_clear(secp256k1_scalar_t *r) {
     r->d[0] = 0;
