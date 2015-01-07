@@ -1186,19 +1186,20 @@ bool ReadBlockFromDisk(CBlock& block, const CBlockIndex* pindex)
     return true;
 }
 
-/*int64 static GetBlockValue(int nHeight, int64 nFees)
-{
-    int64 nSubsidy = 1000000 * COIN;
-    if (nHeight<100) return 1*COIN;	
-    else return nSubsidy/nHeight + nFees;
-}
-*/
-
 CAmount GetBlockValue(int nHeight, const CAmount& nFees)
 {
-    int64 nSubsidy = 1000000 * COIN;
-    if (nHeight<100) return 1*COIN;	
-    else return nSubsidy/nHeight + nFees;
+    int64_t nSubsidy = 1000000 * COIN;
+    if (nHeight<100) return 1 * COIN;
+    //int halvings = nHeight / Params().SubsidyHalvingInterval();
+
+    // Force block reward to zero when right shift is undefined.
+    //if (halvings >= 64)
+    //    return nFees;
+
+    // Subsidy is cut in half every 210,000 blocks which will occur approximately every 4 years.
+    //nSubsidy >>= halvings;
+
+    return nSubsidy/nHeight + nFees;
 }
 
 bool IsInitialBlockDownload()

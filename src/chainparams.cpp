@@ -141,7 +141,7 @@ public:
 
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x30758383eae55ae5c7752b73388c1c85bdfbe930ad25ad877252841ed1e734a4"));
-        assert(genesis.hashMerkleRoot == uint256("0xd508b7916ec00595c1f8e1c767dc3b37392a5e68adf98118bca80a2ed58331d6));
+        assert(genesis.hashMerkleRoot == uint256("0xd508b7916ec00595c1f8e1c767dc3b37392a5e68adf98118bca80a2ed58331d6"));
 
 //    {"woodcoin.org", "dnsseed.woodcoin.org"},
 //    {"174.129.89.163", "174.129.89.163"},
